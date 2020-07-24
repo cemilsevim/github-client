@@ -1,0 +1,60 @@
+<div class="user-profile p-4 border rounded mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="user-info">
+                <img class="user-info__img rounded-pill w-100" src="{{user.avatar_url || ''}}"/>
+                <strong class="user-info__name d-block text-center pt-2">{{user.login}}</strong>
+                <div class="d-flex justify-content-center align-items-center mt-2">
+                    <github-favorite-button [user]="user" class="d-inline-block"></github-favorite-button>
+                    <a target="_blank" href="{{user.html_url || ''}}" class="ml-2">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="23px"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <ngb-tabset type="pills">
+                <ngb-tab title="Profile">
+                  <ng-template ngbTabContent>
+                    <ul class="list-group m-0 p-0 mt-3">
+                        <li *ngIf="user.name" class="list-group-item">
+                            <strong class="d-block">Name</strong>
+                            <span>{{user.name}}</span>
+                        </li>
+                        <li *ngIf="user.bio" class="list-group-item">
+                            <strong class="d-block">Bio</strong>
+                            <p>{{user.bio}}</p>
+                        </li>
+                        <li *ngIf="user.location" class="list-group-item">
+                            <strong class="d-block">Location</strong>
+                            <span>{{user.location}}</span>
+                        </li>
+                        <li *ngIf="user.email" class="list-group-item">
+                            <strong class="d-block">E-mail</strong>
+                            <span>{{user.email}}</span>
+                        </li>
+                        <li *ngIf="user.blog" class="list-group-item">
+                            <strong class="d-block">Blog</strong>
+                            <a href="{{user.blog}}" target="_blank">{{user.blog}}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <strong class="d-block">Member Since</strong>
+                            <span>{{user.created_at}}</span>
+                        </li>
+                    </ul>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Repositories">
+                    <ng-template ngbTabContent>
+                        Mock tab
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Projects">
+                    <ng-template ngbTabContent>
+                        Mock tab
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>

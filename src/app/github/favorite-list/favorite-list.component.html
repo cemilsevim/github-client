@@ -1,0 +1,14 @@
+<div class="favorite-list" class="mt-4" *ngIf="favoriteUsers.length > 0">
+    <h6 class="pt-2 pb-2">Favorite List</h6>
+    <ul class="m-0 p-0 text-nowrap pb-3" style="overflow-x:scroll">
+        <li class="d-inline-block" *ngFor="let user of favoriteUsers">
+            <a routerLink="/user/{{user.login}}" class="pl-3 pr-3 text-dark d-block">
+                <div class="text-center">
+                    <img src="{{user.avatar_url}}" width="60px" class="border rounded-pill"/>
+                </div>
+                <strong class="d-block text-center p-1" style="font-size:13px;">{{user.login}}</strong>
+            </a>
+            <github-favorite-button [user]="user"></github-favorite-button>
+        </li>
+    </ul>
+</div>

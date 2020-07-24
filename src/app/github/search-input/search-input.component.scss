@@ -1,0 +1,11 @@
+.github-search-result {
+    z-index:9999;
+    overflow-y: auto;
+}
+
+.github-search__button{
+    position: absolute;
+    right:0px;
+    top:0px;
+    border-radius:0;
+}

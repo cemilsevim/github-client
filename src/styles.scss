@@ -1,0 +1,11 @@
+a{
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 992px) { 
+    .container{
+        width:600px;
+    }
+}

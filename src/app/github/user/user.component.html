@@ -1,0 +1,11 @@
+<div class="github-user row border-bottom pb-2">
+    <div class="github-user__img col-3 col-md-2">
+        <a href="" class="mb-2 text-secondary"><img src="{{user.avatar_url}}" class="w-100 rounded-circle"/></a>
+    </div>
+    <div class="github-user__name col-9 col-md-10 d-flex align-content-center flex-wrap">
+        <a routerLink="/user/{{user.login}}" class="mb-2 text-secondary">
+            <strong>{{user.login}}</strong>
+        </a>
+        <github-favorite-button [user]="user" class="position-absolute" style="right:30px; top:0px"></github-favorite-button>
+    </div>
+</div>
